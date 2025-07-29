@@ -1,0 +1,138 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.logo-left img,
+.logo-right img {
+  height: 60px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: green;
+  font-weight: bold;
+}
+
+/* Dropdown */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px 0;
+  z-index: 1000;
+  min-width: 160px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+  color: black;
+}
+
+.dropdown-menu li a:hover {
+  color: green;
+}
+
+/* Mobile Styles */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* Existing styles stay same */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%; /* changed from right */
+  height: 100vh;
+  width: 45%;
+  background-color: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  padding: 60px 20px;
+  z-index: 999;
+}
+
+.mobile-menu.open {
+  left: 0; /* sidebar opens from left */
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-menu a, .mobile-menu span {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Mobile dropdown inside sidebar */
+.mobile-dropdown {
+  list-style: none;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.mobile-dropdown li a {
+  font-size: 15px;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .logo-right {
+    display: none;
+  }
+}
