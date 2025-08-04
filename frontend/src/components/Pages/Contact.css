@@ -1,0 +1,57 @@
+.contact-container {
+  background: url('../assets/top-view-blue-monday-concept-composition-with-telephone.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  /* background: rgba(255, 255, 255, 0.85); */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 600px; /* jitna chora chahiye, woh adjust kar sakte ho */
+  margin-left: 30%;
+  backdrop-filter: blur(10px); /* optional: soft glass effect */
+}
+
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form h2 {
+  text-align: center;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00aaff;
+}
+
+.contact-form button {
+  background-color: #00aaff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #008ecc;
+}

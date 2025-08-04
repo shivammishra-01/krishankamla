@@ -1,0 +1,178 @@
+.company-card-wrapper {
+  position: relative;
+  padding: 10px 0;
+  overflow: hidden;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  font-size: 35px;
+  font-weight: 800;
+  margin: 0;
+  color: #1f2d3a;
+  letter-spacing: 0.5px;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  gap: 10px;
+}
+
+.nav-btn {
+  pointer-events: all;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.nav-btn:hover {
+  transform: scale(1.1);
+}
+
+/* viewport that masks overflow */
+.company-card-viewport {
+  overflow: hidden;
+  position: relative;
+}
+
+/* frame that moves continuously; contains two copies */
+.company-card-frame {
+  display: flex;
+  gap: 18px;
+  padding: 15px 40px; /* keep same padding as before for space */
+  will-change: transform;
+  direction: ltr;
+}
+
+/* scrollbar hidden because transform-based loop doesn’t need native scroll */
+.company-card-viewport::-webkit-scrollbar {
+  display: none;
+}
+.company-card-viewport {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.company-card-viewport {
+  overflow: hidden;
+}
+
+.company-card-frame {
+  display: flex;
+  gap: 18px;
+  padding: 15px 40px;
+  will-change: transform;
+}
+
+/* card design (same as before) */
+.company-card {
+  flex: 0 0 auto;
+  min-width: 220px;
+  max-width: 260px;
+  background: linear-gradient(135deg, #e0ffe6 0%, #64df64 60%);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.company-card:nth-child(odd) {
+  transform: rotate(-3deg);
+}
+
+.company-card:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.company-card:hover {
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow: 0px 18px 35px rgba(0, 0, 0, 0.15);
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.company-logo {
+  width: 60px;
+  height: auto;
+  display: block;
+}
+
+.company-info h3 {
+  font-size: 18px;
+  margin: 0 0 6px;
+  font-weight: 600;
+  color: #1f2d3a;
+  text-align: center;
+}
+
+.company-info p {
+  font-size: 13px;
+  margin: 0;
+  color: #4d555f;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .company-card {
+    min-width: 180px;
+    max-width: 200px;
+    padding: 14px;
+  }
+
+  .company-info h3 {
+    font-size: 16px;
+  }
+
+  .company-info p {
+    font-size: 12px;
+  }
+
+  .carousel-controls {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .company-card-frame {
+    gap: 12px;
+    padding: 10px 20px;
+  }
+
+  .company-card:nth-child(odd) {
+    transform: rotate(-2deg);
+  }
+
+  .company-card:nth-child(even) {
+    transform: rotate(2deg);
+  }
+
+  .company-card:hover {
+    transform: rotate(0deg) translateY(-4px);
+  }
+}
